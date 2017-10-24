@@ -9,7 +9,7 @@ class Artist(models.Model):
     bio = models.CharField(max_length=1000)
 
     def __str__(self):
-        return name
+        return self.name
 
 class Album(models.Model):
     title = models.CharField(max_length= 200)
@@ -17,7 +17,7 @@ class Album(models.Model):
     artwork = models.CharField(max_length=1000)
 
     def __str__(self):
-        return title
+        return self.title
 
 
 
@@ -27,4 +27,4 @@ class Song(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
 
     def __str__(self):
-        return title
+        return self.title
